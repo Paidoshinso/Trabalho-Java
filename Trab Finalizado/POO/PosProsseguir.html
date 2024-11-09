@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resumo do Aluguel</title>
+    <link rel="stylesheet" href="PosProsseguir.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="summary-box">
+            <h2>Resumo total</h2>
+            <p id="car-name"></p>
+            <p id="rental-duration"></p>
+            <p id="daily-rate"></p>
+            <p id="insurance-cost"></p>
+            <h3 id="total-cost"></h3>
+
+            <button class="btn" onclick="showPaymentOptions()">Formas de Pagamento</button>
+            <button class="btn" onclick="contactUs()">Está na dúvida? Fale conosco</button>
+        </div>
+    </div>
+
+    <script>
+        // Função para extrair os parâmetros da URL
+        function getQueryParams() {
+            const params = new URLSearchParams(window.location.search);
+            return {
+                carId: params.get('carId'),
+                quantity: params.get('quantity'),
+                startDate: params.get('startDate'),
+                endDate: params.get('endDate')
+            };
+        }
+
+        // Função para mostrar os detalhes do aluguel
+        function displayRentalDetails() {
+            const { carId, quantity, startDate, endDate } = getQueryParams();
+
+            // Simulando dados de um carro (você pode substituir pela sua lógica de obtenção de dados)
+            const carDetails = {
+                name: "Carro Exemplo", // Isso deve ser obtido da API ou banco de dados
+                dailyRate: 100, // Exemplo de valor da diária
+                insuranceCost: 20 // Exemplo de valor do seguro
+            };
+
+            // Cálculo do custo total
+            const rentalDays = Math.ceil((new Date(endDate) - new Date(startDate)) / (1000 * 60 * 60 * 24));
+            const totalCost = (carDetails.dailyRate + carDetails.insuranceCost) * rentalDays * quantity;
+
+            // Atualizando o HTML com os detalhes
+            document.getElementById('car-name').textContent = `Carro: ${carDetails.name}`;
+            document.getElementById('rental-duration').textContent = `Duração: ${quantity} carro(s) de ${startDate} a ${endDate}`;
+            document.getElementById('daily-rate').textContent = `Valor da diária: R$ ${carDetails.dailyRate}`;
+            document.getElementById('insurance-cost').textContent = `Valor do seguro: R$ ${carDetails.insuranceCost}`;
+            document.getElementById('total-cost').textContent = `Custo Total: R$ ${totalCost}`;
+        }
+
+        // Funções para as opções de pagamento e contato
+        function showPaymentOptions() {
+            alert("Exibindo opções de pagamento...");
+        }
+
+        function contactUs() {
+            alert("Informações de contato: (21) 98765-4321");
+        }
+
+        // Executa ao carregar a página
+        window.onload = displayRentalDetails;
+    </script>
+</body>
+</html>

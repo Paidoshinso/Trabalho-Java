@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <link rel="stylesheet" href="style.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste para site</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="login-box">
+            <form action="EscolhaPlano.html" method="post"> 
+                <h2>Login</h2>
+                <div class="input-box">
+                    <span class="icon"><i class="fa-regular fa-pen-to-square"></i></span>
+                    <input type="text" name="cpf_cnpj" id="cpf_cnpj" placeholder="CPF ou CNPJ" required pattern="\d+" title="Apenas números são permitidos">
+                </div>
+                <div class="input-box">
+                    <span class="icon"><i class="fa-solid fa-lock"></i></span>
+                    <input type="password" name="password" id="password" placeholder="Senha" required>
+                </div>
+                <div class="remember-forgot">
+                    <a href="#">Esqueceu a senha?</a>
+                </div>
+                <button type="button" onclick="validarLogin()">Login</button>
+                <div class="register-link">
+                    <a href="CriarConta.html">Don't have an account? Create Now</a>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="login.js"></script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escolha qual plano seguir</title>
+    <link rel="stylesheet" href="PosLoguin.css"> 
+</head>
+
+<body>
+    <div class="container">
+        <div class="login-box">
+            <form id="car-selection-form">
+                <h2>Escolha qual plano seguir</h2>
+                <button type="button" class="btn" onclick="showOptions('aluguel')">Aluguel</button>
+                <button type="button" class="btn" onclick="showOptions('seguros')">Seguros</button>
+                
+                <div id="aluguel-options" class="options" style="display: none;">
+                    <label class="option-label">Qual carro deseja escolher?</label>
+                    <select id="car-list">
+                        <option>Carregando...</option>
+                    </select>
+
+                    <label class="option-label">Quantos carros deseja?</label>
+                    <input type="number" id="car-quantity" min="1" value="1">
+
+                    <label class="option-label">Tempo de duração:</label>
+                    <label class="option-label">Início:</label>
+                    <input type="date" id="start-date"> 
+                    <span style="color: white;">Término:</span> 
+                    <input type="date" id="end-date">
+
+                    <label class="option-label">Escolha o plano:</label>
+                    <button type="button" class="btn" onclick="showDescription('simples')">Plano Simples</button>
+                    <button type="button" class="btn" onclick="showDescription('total')">Plano Total</button>
+                    <p id="plan-description" class="description"></p>
+                </div>
+                
+                <div id="seguros-options" class="options" style="display: none;">
+                    <label class="option-label">Qual carro deseja escolher?</label>
+                    <select id="car-list-seguros">
+                        <option>Carregando...</option>
+                    </select>
+
+                    <label class="option-label">Quantos carros deseja?</label>
+                    <input type="number" id="car-quantity-seguros" min="1" value="1">
+
+                    <label class="option-label">Tempo de duração:</label>
+                    <label class="option-label">Início:</label>
+                    <input type="date" id="start-date-seguros"> 
+                    <span style="color: white;">Término:</span> 
+                    <input type="date" id="end-date-seguros">
+
+                    <label class="option-label">Escolha o plano:</label>
+                    <button type="button" class="btn" onclick="showDescription('simples')">Plano Simples</button>
+                    <button type="button" class="btn" onclick="showDescription('total')">Plano Total</button>
+                    <p id="plan-description-seguros" class="description"></p>
+                </div>
+
+                <button type="button" class="btn prosseguir-btn" onclick="prosseguir()">Prosseguir</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Importando o axios e o arquivo JavaScript separado -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="Pos.Loguin.js"></script>
+</body>
+</html>

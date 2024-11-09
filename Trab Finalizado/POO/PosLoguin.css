@@ -1,0 +1,109 @@
+/* fonte Google */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+/*Css Geral */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.container {
+    width: 100%;
+    min-height: 100vh;
+    background-color: rgb(1, 65, 65);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .login-box {
+    position: relative;
+    width: 90%; /* Ajuste para responsividade */
+    max-width: 390px; /* Max width to maintain structure */
+    background-color: rgba(0, 0, 0, 0.7); /* Adiciona um fundo escuro para maior legibilidade */
+    border: 2px solid rgba(249, 97, 244, 0.5);
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    backdrop-filter: blur(15px);
+}
+
+.login-box h2 {
+    font-size: 24px; /* Aumentado para maior destaque */
+    color: #fff;
+    margin-bottom: 20px; /* Adiciona espaço abaixo do título */
+}
+
+.login-box .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px 5px; /* Margem lateral reduzida para melhor alinhamento */
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #4CAF50; /* Verde padrão para botões */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.login-box .btn:hover {
+    background-color: #45a049; /* Verde mais escuro no hover */
+}
+
+/* Adiciona uma nova classe para botões selecionados */
+.btn.selected {
+    background-color: #ffa500; /* Laranja para o botão selecionado */
+    color: white; /* Manter a cor do texto em branco para contraste */
+}
+
+.options {
+    display: none;
+    margin-top: 20px;
+    text-align: left;
+}
+
+.option-label {
+    font-weight: bold;
+    color: #fff;
+    margin-top: 10px;
+    display: block;
+}
+
+.description {
+    font-size: 14px;
+    color: #ddd;
+    margin-top: 5px;
+}
+
+.input-box input,
+input[type="date"],
+select {
+    width: 100%;
+    padding: 10px; /* Aumentado para conforto */
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Estilo específico para o novo botão "Prosseguir" */
+.login-box .prosseguir-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px 5px; /* Margem lateral reduzida para melhor alinhamento */
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #007BFF; /* Azul para destacar */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.login-box .prosseguir-btn:hover {
+    background-color: #0056b3; /* Azul mais escuro no hover */
+}
